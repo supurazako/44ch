@@ -15,7 +15,7 @@ import typing
 asyncio.set_event_loop(asyncio.new_event_loop())
 logging.basicConfig(level=logging.INFO)
 
-token = os.environ['token']
+token = os.environ['OTA5MDQ1NzY5NzYyMzkwMDE2.YY-k2A.ApTyDllFI8bVd0QeLx1Fm3MejaA']
 
 welcome_message = '''
 {member.mention}
