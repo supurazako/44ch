@@ -178,6 +178,10 @@ class AnoncBaseClient(Client):
         if await self._should_register_member(member):
             anonc_channel = await self.anonc_guild.register_member(member)
             await self.on_anonc_member_join(anonc_channel)
+        else:
+            if member != self.bot_owner:
+                await member.send('Sorry. You cannot join this AnonChat')
+                await member.kick()
 
     async def _should_register_member(self, member) -> bool:
         if member.guild != self.anonc_guild.anonc_system_guild and not self.anonc_guild.get_anonc_chat_channel_from_user(member):
